@@ -39,3 +39,23 @@ Greenwave/TCP updated firmware and removed HTTP service. This is a minor change 
 
 - Added basic support for firmware version 3.0.74 (HTTPS-only), requires manual identification of gateway IP (GWR disabled domain service)
 - Added settings page to hold custom configuration details such as gateway IPs; it should not be committed to the repo
+
+## Fork notes
+
+### Cron entries (setup using WD My Cloud DL2000)
+`0 20 * * * python /home/root/pygop-tcp-light-control/turnRoomsOn.py & # Turn lights on every day at 8 PM`
+`0 8 * * * python /home/root/pygop-tcp-light-control/turnRoomsOff.py & # Turn lights off every day at 8 AM`
+
+### Commands:
+
+#### Runs room report
+`python test.py`
+
+#### Sets all lights to DIM=65
+`python setRoomsDim.py`
+
+#### Turns all lights ON
+`python turnRoomsOn.py`
+
+#### Turns all lights OFF
+`python turnRoomsOff.py`
