@@ -314,6 +314,7 @@ class pygop(object):
 
         try:
             gatewayIP = self.__readCache("gatewayIP", invalidate)
+            print 'internal gatewayIP: ', gatewayIP
             return gatewayIP
         except:
             SSDP_ADDR = "239.255.255.250";
