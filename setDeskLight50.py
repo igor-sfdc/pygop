@@ -1,10 +1,14 @@
 import pygop
 import sys
 from ConfigParser import SafeConfigParser
+import os
+
+# Establish current location
+configLocation = os.path.dirname(os.path.realpath(__file__))
 
 # Read config options
 config = SafeConfigParser()
-config.read('config')
+config.read(configLocation + '/' + 'config')
 deskLightDid = int(config.get('main', 'deskLightDid'))
 deskLightBrightness = int(config.get('main', 'deskLightBrightness'))
 
